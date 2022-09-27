@@ -1,4 +1,6 @@
 from os import getenv
+from sqlalchemy import create_engine
+import psycopg2
 
 class postgresDB:
     def __init__(self, database:str = getenv("DB_DATABASE"), host:str = getenv("DB_HOST"), password:str = getenv("DB_PASSWORD"), user:str = getenv("DB_USER"), port:str = getenv("DB_PORT")):
@@ -14,7 +16,7 @@ class postgresDB:
         connection = psycopg2.connect(
             host = self.host,
             database = self.database,
-            user - self.user,
+            user = self.user,
             password = self.password,
             post = self.port
             )
